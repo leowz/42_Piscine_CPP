@@ -47,11 +47,11 @@ name:
 	@echo $(OBJS) $(SRCS)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CPPFLAGS) -o $@
+	@$(CC) $(OBJS) $(CPPFLAGS) -o $@
 	@printf $(GREEN)"$(NAME) Finish linking\n"$(EOC)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp | $(OBJ_PATH)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 	@printf $(GREEN)"compiling %s\n"$(GREEN) $<
 
 $(OBJ_PATH):
