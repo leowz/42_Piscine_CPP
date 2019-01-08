@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Game.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/08 11:36:38 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/08 11:36:43 by zweng            ###   ########.fr       */
+/*   Created: 2019/01/07 12:50:14 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/07 12:54:10 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef GAME_HPP
+# define GAME_HPP
 
-# include <iostream>
-# include <string>
-# include <cstdlib>
+# include "ft_retro.hpp"
 
-class Zombie
+class Game
 {
-    std::string _name;
-    std::string _type;
+
 
 public:
-    Zombie(void);
-    Zombie(std::string name, std::string type);
-    void    announce(void);
+    Game(void);
+    Game(const Game &);
+    ~Game(void);
+    Game    &operator=(const Game &);
+
 };
 #endif

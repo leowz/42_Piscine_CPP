@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/08 11:11:02 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/08 11:30:33 by zweng            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Pony.hpp"
 
 Pony::Pony(std::string name, std::string gender, int age):_name(name), _gender(gender), _age(age)
@@ -7,6 +19,11 @@ Pony::Pony(std::string name, std::string gender, int age):_name(name), _gender(g
 std::string    Pony::name(void)
 {
     return (this->_name);
+}
+
+Pony::~Pony(void)
+{
+    std::cout << this->_name << " will no longer exist" << std::endl;
 }
 
 std::string    Pony::gender(void)
