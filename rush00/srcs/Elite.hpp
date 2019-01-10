@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Elite.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:24:18 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/09 10:24:22 by zweng            ###   ########.fr       */
+/*   Created: 2019/01/10 12:41:56 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/10 12:42:50 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ELITE_HPP
+# define ELITE_HPP
 
-# include <iostream>
+# include "ft_retro.hpp"
+# include "Enemy.hpp"
 
-class   Fixed
-{
-    int                 _val;
-    static const int    _fractional;
-public:
-    Fixed(void);
-    Fixed(const Fixed & obj);
-    ~Fixed(void);
+class	Elite : public Enemy {
 
-    Fixed   &operator=(const Fixed & obj);
+	public:
 
-    int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+		Elite(void);
+		Elite(int x, int y);
+		Elite(Elite &obj);
+		virtual ~Elite(void);
+		Elite &operator=(Elite const &r);
+
+		int		moveElite(int map, int end);
+		void	clearElite(void);
+		void	drawElite(void);
+		int		isAlive(void);
+		int		isEHit(int x, int y);
+
 };
-
 #endif

@@ -6,11 +6,12 @@
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 15:58:19 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/07 18:47:37 by zweng            ###   ########.fr       */
+/*   Updated: 2019/01/09 11:47:48 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_retro.hpp"
+#include "Game.hpp"
 
 void    help_menu(int y, int x)
 {
@@ -23,8 +24,8 @@ void    help_menu(int y, int x)
 	mvwprintw(help, 9, 2, "SHOOT STRAFE LEFT: 1");
 	mvwprintw(help, 11, 2, "SHOOT STRAFE RIGHT: 3");
 	wrefresh(help);
-	//wclear(help);
-	//delwin(help);
+	wclear(help);
+	delwin(help);
 }
 
 bool     game(void)
@@ -34,14 +35,14 @@ bool     game(void)
     int row = 0;
 
     std::stringstream   ss;
-    /*start_color();
+    start_color();
 	init_pair(1, COLOR_CYAN, COLOR_BLACK);
 	init_pair(2, COLOR_RED, COLOR_BLACK);
 	init_pair(3, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(4, COLOR_GREEN, COLOR_BLACK);
 	init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
 	init_pair(6, COLOR_BLUE, COLOR_BLACK);
-    refresh();*/
+    refresh();
     keypad(stdscr, TRUE);
     nodelay(stdscr, TRUE);
 
@@ -50,26 +51,36 @@ bool     game(void)
     ss << "col and row max" << col << " , " << row;
     debugger(ss.str());
     
+    Game    game = Game(row - 2, col - 2);
     debugger("start inner while");
-    while (42)
+    while (game.gameStatus() == 2)
     {
         if ((c = getch()) != ERR)
         {
-            ss.str("");
-            ss << "get a char ( " << std::string(1,c) << " )";
-            debugger(ss.str());
             if (c == ' ')
             {
                 ss.str("");
                 ss << "put menu at " << (col/2) - 3 << " , " << (row/2) + 7;
                 debugger(ss.str());
-                help_menu((col/2) - 3, (row/2) + 7);
+                help_menu(5 , 5);
             }
             else
                 break ;
         }
     }
-    //clear();
+
+
+    Timer   timer(clock());
+    int     curr_time = timer.checkTime(clock());
+    int     x = 0;
+    int     y = 0;
+    int     cnt = 0;
+
+    while (game.gameStatus() == 1)
+    {
+    
+    }
+
     return (true);
 }
 

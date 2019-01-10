@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Timer.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:24:18 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/09 10:24:22 by zweng            ###   ########.fr       */
+/*   Created: 2019/01/09 17:47:03 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/09 17:50:00 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef TIMER_HPP
+# define TIMER_HPP
 
-# include <iostream>
+# include "ft_retro.hpp"
 
-class   Fixed
+class Timer 
 {
-    int                 _val;
-    static const int    _fractional;
+    clock_t	_timer;
+
 public:
-    Fixed(void);
-    Fixed(const Fixed & obj);
-    ~Fixed(void);
+    Timer(void);
+    Timer(clock_t t);
+    Timer(Timer &obj);
+    virtual ~Timer(void);
+    Timer &operator=(Timer const &r);
 
-    Fixed   &operator=(const Fixed & obj);
-
-    int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+    int		checkTime(clock_t t);
+    int		getSec(clock_t t);
 };
-
 #endif

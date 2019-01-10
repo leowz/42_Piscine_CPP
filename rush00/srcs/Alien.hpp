@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Alien.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:24:18 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/09 10:24:22 by zweng            ###   ########.fr       */
+/*   Created: 2019/01/10 14:54:23 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/10 15:08:55 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ALIEN_HPP
+# define ALIEN_HPP
 
-# include <iostream>
+# include "ft_retro.hpp"
+# include "Enemy.hpp"
 
-class   Fixed
-{
-    int                 _val;
-    static const int    _fractional;
-public:
-    Fixed(void);
-    Fixed(const Fixed & obj);
-    ~Fixed(void);
+class	Alien : public Enemy {
 
-    Fixed   &operator=(const Fixed & obj);
+	public:
 
-    int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+		Alien(void);
+		Alien(int x, int y);
+		Alien(Alien &obj);
+		virtual ~Alien(void);
+		Alien &operator=(Alien const &r);
+
+		int		movement(int map, int end);
+		int		isAlive(void);
+
 };
-
 #endif

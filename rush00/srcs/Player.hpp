@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <zweng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:24:18 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/09 10:24:22 by zweng            ###   ########.fr       */
+/*   Created: 2019/01/09 18:18:28 by zweng             #+#    #+#             */
+/*   Updated: 2019/01/10 12:38:52 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef PLAYER_HPP
+# define PLAYER_HPP
 
-# include <iostream>
+# include "ft_retro.hpp"
+# include "Enemy.hpp"
 
-class   Fixed
+class	Player : public Enemy
 {
-    int                 _val;
-    static const int    _fractional;
 public:
-    Fixed(void);
-    Fixed(const Fixed & obj);
-    ~Fixed(void);
+    Player(void);
+    Player(int x, int y);
+    Player(Player &obj);
+    virtual ~Player(void);
+    Player &operator=(Player const &r);
 
-    Fixed   &operator=(const Fixed & obj);
+    int		loseLife(void);
 
-    int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+    int		bulletHit(void);
+
 };
-
 #endif
+
