@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2019/01/15 15:22:43 by zweng            ###   ########.fr        #
+#    Updated: 2019/01/15 18:03:43 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ CC = clang++
 
 # ----- part to change -----
 
-NAME 			= ex01
+NAME 			= ex02
 
 HEADER_PATH 	= .
 SRC_PATH 		= .
 
-SRC_NAME		= iter.cpp
+SRC_NAME		= main.cpp
 
 OBJ_PATH =  obj
 OBJ_NAME =  $(SRC_NAME:.cpp=.o)
