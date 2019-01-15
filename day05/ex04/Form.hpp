@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:31:04 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/13 14:42:36 by zweng            ###   ########.fr       */
+/*   Updated: 2019/01/14 18:01:28 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Bureaucrat;
 class Form
 {
 	const std::string	_name;
-	bool				_isSigned;
 	const int			_signGrade;
 	const int			_execGrade;
+	bool				_isSigned;
 
 public:
 	Form(void);

@@ -6,13 +6,13 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 14:54:01 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/12 17:08:22 by zweng            ###   ########.fr       */
+/*   Updated: 2019/01/14 18:15:36 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-int		main(int ac, char **av)
+int		main(void)
 {
 	try
 	{

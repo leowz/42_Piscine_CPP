@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 14:54:01 by zweng             #+#    #+#             */
-/*   Updated: 2019/01/13 14:07:59 by zweng            ###   ########.fr       */
+/*   Updated: 2019/01/14 18:17:59 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int		main(int ac, char **av)
+int		main(void)
 {
 	Bureaucrat	test("Big Bure", 1);
 	Bureaucrat	test2("Small Bure", 150);
